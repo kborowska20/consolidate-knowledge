@@ -1,16 +1,25 @@
 package com.codecool.krk20161.javase.model;
 
-/**
- * Created by KBorowska on 31.05.2017.
- */
-public class Author {
-    private String name;
+
+public class Author extends Person {
+    private String biography;
 
     public Author(String name) {
-        this.name = name;
+        super(name);
     }
 
-    public String getName() {
-        return name;
+    public Author(String name,String biography) {
+        super(name);
+        this.setBiography(biography);
     }
+
+    public void setBiography(String biography){
+        this.biography = biography;
+    }
+
+    public String getBiography(){
+        return this.biography;
+    }
+
+
 }
