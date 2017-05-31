@@ -1,9 +1,19 @@
 package com.codecool.krk20161.javase.model;
 
-/**
- * Created by KBorowska on 30.05.2017.
- */
+
 public class Book {
-    public Book(String s, Author author1) {
+    private String title;
+    private Author author;
+    private String summary;
+
+    public Book(String title, Author author) {
+        this.setTitle(title);
+        this.setAuthor(author);
+    }
+
+    public Book(String title, Author author, String summary) {
+        this.setTitle(title);
+        this.setAuthor(author);
+        this.setSummary(summary);
     }
 }
