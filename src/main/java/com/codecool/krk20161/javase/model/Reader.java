@@ -15,14 +15,14 @@ public class Reader extends Person{
 
     public Reader(String name, ArrayList<Book> booksList) {
         super(name);
-        this.setBooksList(booksList);
+        this.setRead(booksList);
     }
 
-    public void setBooksList(ArrayList<Book> booksList){
+    public void setRead(ArrayList<Book> booksList){
         this.booksList = booksList;
     }
 
-    public ArrayList<Book> getBooksList(){
+    public ArrayList<Book> getRead(){
         return this.booksList;
     }
 
