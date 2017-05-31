@@ -6,8 +6,8 @@ package com.codecool.krk20161.javase.model;
 public class Person {
     private String name;
 
-    public void Person(String name){
-        this.setName(name);
+    public Person(String name){
+        this.name = name;
     }
     public void setName(String name){
         this.name = name;
