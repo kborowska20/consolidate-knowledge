@@ -22,5 +22,8 @@ public class Reader extends Person{
         this.booksList = booksList;
     }
 
+    public ArrayList<Book> getBooksList(){
+        return this.booksList;
+    }
 
 }
