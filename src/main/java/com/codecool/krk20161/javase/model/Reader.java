@@ -35,4 +35,15 @@ public class Reader extends Person{
         }
         return null;
     }
+
+    public List<Book> searchByAuthor(Author author){
+        List<Book> booksByAuthor = new ArrayList<>();
+        for(int i = 0;i < this.booksList.size();i++){
+            Book book = booksList.get(i);
+            if(book.getAuthor() == author) {
+                booksByAuthor.add(book);
+            }
+        }
+        return booksByAuthor;
+    }
 }
