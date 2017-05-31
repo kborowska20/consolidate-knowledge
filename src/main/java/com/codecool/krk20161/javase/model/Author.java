@@ -5,9 +5,14 @@ package com.codecool.krk20161.javase.model;
  */
 public class Author extends Person {
 
+    public Author(String name) {
+        super(name);
+    }
+
     public Author(String name,String biography) {
         super(name);
         this.setBiography(biography);
     }
+
 
 }
