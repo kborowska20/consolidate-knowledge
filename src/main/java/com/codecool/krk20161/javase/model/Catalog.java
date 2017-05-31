@@ -1,7 +1,18 @@
 package com.codecool.krk20161.javase.model;
 
-/**
- * Created by KBorowska on 30.05.2017.
- */
-public class Catalog {
+import java.util.ArrayList;
+import java.util.List;
+
+
+public class Catalog implements BookList {
+    private List<Book> bookList;
+
+    public Catalog(){
+        this.bookList = new ArrayList<>();
+    }
+
+    public List<Book> getBooks() {
+        return this.bookList;
+    }
+
 }
