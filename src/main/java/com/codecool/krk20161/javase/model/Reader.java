@@ -1,6 +1,7 @@
 package com.codecool.krk20161.javase.model;
 
 import java.util.ArrayList;
+import java.util.List;
 
 /**
  * Created by KBorowska on 30.05.2017.
@@ -14,9 +15,12 @@ public class Reader extends Person{
 
     public Reader(String name, ArrayList<Book> booksList) {
         super(name);
-        this.setBooksList(ArrayList<Book>);
+        this.setBooksList(booksList);
     }
 
+    public void setBooksList(ArrayList<Book> booksList){
+        this.booksList = booksList;
+    }
 
 
 }
