@@ -3,6 +3,7 @@ package com.codecool.krk20161.javase.model;
 import com.codecool.krk20161.javase.exception.AlreadyInCatalogException;
 
 import java.util.ArrayList;
+import java.util.Iterator;
 import java.util.List;
 
 
@@ -23,12 +24,13 @@ public class Catalog implements SearchBy {
         } else throw new AlreadyInCatalogException("Can't add book with same title twice");
     }
 
-    public boolean remove(Book book) {
-        if (this.bookList.contains(book)) {
-            bookList.remove(book);
-            return true;
-        } else {
-            return false;
+    public void remove(Book book) {
+        Iterator<Book> it = this.bookList.iterator();
+        while (it.hasNext()) {
+            Book book1 = it.next();
+            if (book.getTitle().equals(book1.getTitle())&& book.getAuthor().getName().equals(book1.getAuthor().getName())) {
+                it.remove();
+            }
         }
     }
 
