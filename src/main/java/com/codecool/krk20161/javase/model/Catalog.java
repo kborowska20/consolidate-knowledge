@@ -6,7 +6,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 
-public class Catalog implements BookList {
+public class Catalog implements SearchBy {
     private List<Book> bookList;
 
     public Catalog(){
