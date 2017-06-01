@@ -1,6 +1,6 @@
 package com.codecool.krk20161.javase.model;
 
-import com.codecool.krk2061.javase.exception.AlreadyInCatalogException;
+import com.codecool.krk20161.javase.exception.AlreadyInCatalogException;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Nested;
@@ -24,7 +24,7 @@ class CatalogTest {
 
     @Test
     @DisplayName("Add book to catalog")
-    void testAddBookToTheList() {
+    void testAddBookToTheList() throws AlreadyInCatalogException {
         Book book = new Book(null, null);
         Catalog catalog = new Catalog();
         catalog.add(book);
@@ -35,7 +35,7 @@ class CatalogTest {
 
     @Test
     @DisplayName("Can't add book with same title twice")
-    void testCannotAddBookWithSameTitleTwice() {
+    void testCannotAddBookWithSameTitleTwice() throws AlreadyInCatalogException {
         final Catalog catalog = new Catalog();
 
         Book first = new Book("Book title", null);
@@ -61,7 +61,7 @@ class CatalogTest {
         Catalog catalog;
 
         @BeforeEach
-        void setUp() {
+        void setUp() throws AlreadyInCatalogException {
             this.catalog = new Catalog();
             this.catalog.add(this.book1);
             this.catalog.add(this.book2);
