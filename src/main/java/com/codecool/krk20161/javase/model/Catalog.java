@@ -16,8 +16,12 @@ public class Catalog implements BookList {
     }
 
     public void add(Book book){
-        if(this.bookList.contains(book)){
-            bookList.add(book);
+        try {
+            if (this.bookList.contains(book)) {
+                bookList.add(book);
+            }
+        } catch (AlreadyInCatalogException e){
+            System.err.print(e);
         }
     }
 
