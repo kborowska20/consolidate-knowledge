@@ -5,7 +5,7 @@ import java.util.List;
 
 
 public class Reader extends Person implements SearchBy{
-    private List<Book> booksList;
+    private List<Book> booksList = new ArrayList<>();
 
     public Reader(String name) {
         super(name);
