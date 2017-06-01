@@ -24,11 +24,10 @@ public class Catalog implements SearchBy {
     }
 
     public void add(Book book) throws AlreadyInCatalogException {
-        if(this.bookList.contains(book)){
-            throw new AlreadyInCatalogException("messg");
-        } else {
-            this.bookList.add(book);
+        for(Book bookInList : this.bookList){
+            if(bookInList.getTitle().equals(book.getTitle())) throw new AlreadyInCatalogException("Can't add book with same title twice");
         }
+        bookList.add(book);
     }
 
     public void remove(Book book) {
