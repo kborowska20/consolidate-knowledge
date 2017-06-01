@@ -24,7 +24,7 @@ public class Reader extends Person implements SearchBy{
         return this.booksList;
     }
 
-    public List<Book> searchBy(String title) {
+    public List<Book> searchByTitle(String title) {
         List<Book> booksByTitle = new ArrayList<>();
         for(int i = 0;i < this.booksList.size();i++){
             Book book = booksList.get(i);
@@ -35,7 +35,7 @@ public class Reader extends Person implements SearchBy{
         return booksByTitle;
     }
 
-    public List<Book> searchBy(Author author) {
+    public List<Book> searchByAuthor(Author author) {
         List<Book> booksByAuthor = new ArrayList<>();
         for(int i = 0;i < this.booksList.size();i++){
             Book book = booksList.get(i);
