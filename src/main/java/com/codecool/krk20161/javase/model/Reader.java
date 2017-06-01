@@ -39,7 +39,7 @@ public class Reader extends Person implements SearchBy{
         List<Book> booksByAuthor = new ArrayList<>();
         for(int i = 0;i < this.booksList.size();i++){
             Book book = booksList.get(i);
-            if(book.getAuthor() == author) {
+            if(book.getAuthor().getName() == author.getName()) {
                 booksByAuthor.add(book);
             }
         }
