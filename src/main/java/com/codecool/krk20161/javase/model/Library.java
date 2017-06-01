@@ -7,7 +7,7 @@ import java.util.List;
  * Created by KBorowska on 30.05.2017.
  */
 public class Library {
-    private Catalog catalog;
+    private Catalog catalog = new Catalog();
 
     public Library(){
         this.setCatalog(catalog);
