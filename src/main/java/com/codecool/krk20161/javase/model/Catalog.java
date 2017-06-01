@@ -14,10 +14,19 @@ public class Catalog implements BookList {
     public List<Book> getBooks() {
         return this.bookList;
     }
+
     public void add(Book book){
         if(this.bookList.contains(book)){
             bookList.add(book);
         }
     }
 
+    public boolean remove(Book book) {
+        if (this.bookList.contains(book)) {
+            bookList.remove(book);
+            return true;
+        } else {
+            return false;
+        }
+    }
 }
