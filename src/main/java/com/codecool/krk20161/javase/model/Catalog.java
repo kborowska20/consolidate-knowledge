@@ -5,12 +5,17 @@ import com.codecool.krk20161.javase.exception.AlreadyInCatalogException;
 import java.util.ArrayList;
 import java.util.Iterator;
 import java.util.List;
+import java.util.Objects;
 
 
 public class Catalog implements SearchBy {
     private List<Book> bookList;
 
     public Catalog(){
+        this.setBookList();
+    }
+
+    public void setBookList(){
         this.bookList = new ArrayList<>();
     }
 
@@ -19,9 +24,11 @@ public class Catalog implements SearchBy {
     }
 
     public void add(Book book) throws AlreadyInCatalogException {
-        if (!this.bookList.contains(book)) {
-            bookList.add(book);
-        } else throw new AlreadyInCatalogException("Can't add book with same title twice");
+        if(this.bookList.contains(book)){
+            throw new AlreadyInCatalogException("messg");
+        } else {
+            this.bookList.add(book);
+        }
     }
 
     public void remove(Book book) {
@@ -38,7 +45,7 @@ public class Catalog implements SearchBy {
         List<Book> booksByTitle = new ArrayList<>();
         for(int i = 0;i < this.bookList.size();i++){
             Book book = bookList.get(i);
-            if(book.getTitle() == title) {
+            if(book.getTitle().equals(title)) {
                 booksByTitle.add(book);
             }
         }
@@ -47,9 +54,8 @@ public class Catalog implements SearchBy {
 
     public List<Book> searchByAuthor(Author author){
         List<Book> booksByAuthor = new ArrayList<>();
-        for(int i = 0;i < this.bookList.size();i++){
-            Book book = bookList.get(i);
-            if(book.getAuthor().getName() == author.getName()) {
+        for (Book book : this.bookList) {
+            if (Objects.equals(book.getAuthor().getName(), author.getName())) {
                 booksByAuthor.add(book);
             }
         }
