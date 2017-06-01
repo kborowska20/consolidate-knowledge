@@ -37,4 +37,15 @@ public class Catalog implements BookList {
             return false;
         }
     }
+
+    public List<Book> searchByTitle(String title){
+        List<Book> booksByTitle = new ArrayList<>();
+        for(int i = 0;i < this.bookList.size();i++){
+            Book book = bookList.get(i);
+            if(book.getTitle() == title) {
+                booksByTitle.add(book);
+            }
+        }
+        return booksByTitle;
+    }
 }
