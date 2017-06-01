@@ -5,5 +5,7 @@ import java.util.List;
 
 public interface SearchBy {
 
-     List<Book> getBooks();
+      List<Book> searchBy(String title);
+
+      List<Book> searchBy(Author author);
 }
