@@ -17,16 +17,10 @@ public class Catalog implements SearchBy {
         return this.bookList;
     }
 
-    public void add(Book book){
+    public void add(Book book) throws AlreadyInCatalogException {
         if (!this.bookList.contains(book)) {
             bookList.add(book);
-        } else {
-            try {
-                throw new AlreadyInCatalogException("Can't add book with same title twice");
-            } catch (AlreadyInCatalogException e) {
-                e.printStackTrace();
-            }
-        }
+        } else throw new AlreadyInCatalogException("Can't add book with same title twice");
     }
 
     public boolean remove(Book book) {
@@ -53,7 +47,7 @@ public class Catalog implements SearchBy {
         List<Book> booksByAuthor = new ArrayList<>();
         for(int i = 0;i < this.bookList.size();i++){
             Book book = bookList.get(i);
-            if(book.getAuthor() == author) {
+            if(book.getAuthor().getName() == author.getName()) {
                 booksByAuthor.add(book);
             }
         }
