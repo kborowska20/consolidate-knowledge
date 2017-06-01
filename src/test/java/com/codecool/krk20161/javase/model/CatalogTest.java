@@ -24,7 +24,7 @@ class CatalogTest {
 
     @Test
     @DisplayName("Add book to catalog")
-    void testAddBookToTheList() throws AlreadyInCatalogException {
+    void testAddBookToTheList(){
         Book book = new Book(null, null);
         Catalog catalog = new Catalog();
         catalog.add(book);
@@ -35,7 +35,7 @@ class CatalogTest {
 
     @Test
     @DisplayName("Can't add book with same title twice")
-    void testCannotAddBookWithSameTitleTwice() throws AlreadyInCatalogException {
+    void testCannotAddBookWithSameTitleTwice(){
         final Catalog catalog = new Catalog();
 
         Book first = new Book("Book title", null);
@@ -61,7 +61,7 @@ class CatalogTest {
         Catalog catalog;
 
         @BeforeEach
-        void setUp() throws AlreadyInCatalogException {
+        void setUp(){
             this.catalog = new Catalog();
             this.catalog.add(this.book1);
             this.catalog.add(this.book2);
