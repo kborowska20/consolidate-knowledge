@@ -1,5 +1,7 @@
 package com.codecool.krk20161.javase.model;
 
+import com.codecool.krk20161.javase.exception.AlreadyInCatalogException;
+
 import java.util.ArrayList;
 import java.util.List;
 
@@ -16,12 +18,14 @@ public class Catalog implements BookList {
     }
 
     public void add(Book book){
-        try {
-            if (this.bookList.contains(book)) {
-                bookList.add(book);
+        if (!this.bookList.contains(book)) {
+            bookList.add(book);
+        } else {
+            try {
+                throw new AlreadyInCatalogException("Can't add book with same title twice");
+            } catch (AlreadyInCatalogException e) {
+                e.printStackTrace();
             }
-        } catch (AlreadyInCatalogException e){
-            System.err.print(e);
         }
     }
 
