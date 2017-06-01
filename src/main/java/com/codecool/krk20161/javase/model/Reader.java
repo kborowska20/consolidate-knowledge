@@ -3,9 +3,7 @@ package com.codecool.krk20161.javase.model;
 import java.util.ArrayList;
 import java.util.List;
 
-/**
- * Created by KBorowska on 30.05.2017.
- */
+
 public class Reader extends Person implements SearchBy{
     private List<Book> booksList;
 
@@ -26,7 +24,7 @@ public class Reader extends Person implements SearchBy{
         return this.booksList;
     }
 
-    public List<Book> searchByTitle(String title) {
+    public List<Book> searchBy(String title) {
         List<Book> booksByTitle = new ArrayList<>();
         for(int i = 0;i < this.booksList.size();i++){
             Book book = booksList.get(i);
@@ -37,7 +35,7 @@ public class Reader extends Person implements SearchBy{
         return booksByTitle;
     }
 
-    public List<Book> searchByAuthor(Author author) {
+    public List<Book> searchBy(Author author) {
         List<Book> booksByAuthor = new ArrayList<>();
         for(int i = 0;i < this.booksList.size();i++){
             Book book = booksList.get(i);
