@@ -38,7 +38,7 @@ public class Catalog implements SearchBy {
         }
     }
 
-    public List<Book> searchBy(String title){
+    public List<Book> searchByTitle(String title){
         List<Book> booksByTitle = new ArrayList<>();
         for(int i = 0;i < this.bookList.size();i++){
             Book book = bookList.get(i);
@@ -49,7 +49,7 @@ public class Catalog implements SearchBy {
         return booksByTitle;
     }
 
-    public List<Book> searchBy(Author author){
+    public List<Book> searchByAuthor(Author author){
         List<Book> booksByAuthor = new ArrayList<>();
         for(int i = 0;i < this.bookList.size();i++){
             Book book = bookList.get(i);
